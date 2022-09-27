@@ -19,8 +19,8 @@ export const useStore = create((set) => ({
   removeCube: (x, y, z) => {
     set((prev) => ({
       cubes: prev.cubes.filter((cube) => {
-        const [x, y, z] = cube.pos;
-        return x != x && y != y && z != z;
+        const [X, Y, Z] = cube.pos;
+        return X !== x || Y !== y || Z !== z;
       }),
     }));
   },
