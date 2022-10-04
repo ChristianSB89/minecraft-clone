@@ -36,3 +36,8 @@ body {
   transform: scale(1);
   border: 2px solid white;
 }
+
+.menu {
+  top: 10px;
+  left: 10px;
+}
