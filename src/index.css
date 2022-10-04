@@ -27,3 +27,12 @@ body {
 .cursor {
   color: #dedddc;
 }
+
+.texture-selector {
+  transform: scale(1.5);
+}
+
+.texture-selector img.active {
+  transform: scale(1);
+  border: 2px solid white;
+}

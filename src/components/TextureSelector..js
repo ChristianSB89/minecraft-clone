@@ -17,10 +17,11 @@ export const TextureSelector = () => {
     state.texture,
     state.setTexture,
   ]);
-  const { dirt, grass, glass, wood, log } = useKeyboard;
+  const { dirt, grass, glass, wood, log } = useKeyboard();
 
   useEffect(() => {
-    const pressedTexture = Object.entries.find(([k, v]) => v);
+    const textures = { dirt, grass, glass, wood, log };
+    const pressedTexture = Object.entries(textures).find(([k, v]) => v);
     if (pressedTexture) {
       setTexture(pressedTexture[0]);
     }
@@ -38,12 +39,13 @@ export const TextureSelector = () => {
 
   return (
     visible && (
-      <div className="absolute centered">
-        {Object.entries(images).map((k, src) => {
+      <div className="absolute centered texture-selector">
+        {Object.entries(images).map(([k, src]) => {
           return (
             <img
               key={k}
               src={src}
+              alt={k}
               className={`${k === activeTexture ? "active" : ""}`}
             />
           );
